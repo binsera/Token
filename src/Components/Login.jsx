@@ -1,8 +1,13 @@
 import React,{useState,useEffect} from 'react'
+import Axios from 'axios';
 
 export default function Login(props) {
 
     const url ="http://localhost:62405/api/Login"
+
+    const [isSuccess,setSuccess]=useState(false)
+
+    const [isError,setError]=useState(false)
 
   const [data,setData]=useState({
 
@@ -13,6 +18,17 @@ export default function Login(props) {
  function Submit(e){
    e.preventDefault()
 console.log(data)
+Axios.post(url,data)
+.then(res=>{
+    console.log(res.data)
+
+    localStorage.setItem('token',res.data['Token'])
+    setSuccess(true)
+
+}).catch(err=>{
+    setError(true)
+})
+
 
  }
 
@@ -45,7 +61,13 @@ console.log(data)
 
 
 
+
   </form>
+
+  { isSuccess && <div className="alert alert-success">success</div> }
+
+  {isError && <div className="alert alert-danger">Error please check</div> }
+
     </div>
   )
 }
