@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import Axios from 'axios';
+import Inputtext from './Ui/Inputtext';
 
 export default function Login(props) {
 
@@ -21,7 +22,7 @@ console.log(data)
 Axios.post(url,data)
 .then(res=>{
     console.log(res.data)
-
+ 
     localStorage.setItem('token',res.data['Token'])
     setSuccess(true)
 
@@ -45,9 +46,9 @@ Axios.post(url,data)
     <div>
       <form onSubmit={(e)=>Submit(e)}>
   <div className="form-group">
-    <label htmlFor="Username">User Name</label>
-    <input onChange={(e)=>handle(e)} value={data.Username} type="text" className="form-control" id="Username"  placeholder="Enter Username"/>
+    
    
+   <Inputtext label="Username" handle={(e)=>handle(e)} nvalue={data.Username}   name="Username"  place="Enter Username" />
   </div>
  
       
