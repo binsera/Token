@@ -8,12 +8,12 @@ import Register from './Components/Register';
 function App() {
   return (
     <div className="App">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6">
             <Login/>
           </div>
-          <div class="col-lg-6">
+          <div className="col-lg-6">
             <Register/>
             </div>
   
