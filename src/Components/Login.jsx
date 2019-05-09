@@ -48,13 +48,13 @@ Axios.post(url,data)
   <div className="form-group">
     
    
-   <Inputtext label="Username" handle={(e)=>handle(e)} nvalue={data.Username}   name="Username"  place="Enter Username" />
+   <Inputtext label="Username" itype="text" handle={(e)=>handle(e)} nvalue={data.Username}   name="Username"  place="Enter Username" />
   </div>
  
       
   <div className="form-group">
     <label htmlFor="Password">Password</label>
-    <input onChange={(e)=>handle(e)} value={data.Password} type="text" className="form-control" id="Password"  placeholder="Enter Password"/>
+    <input onChange={(e)=>handle(e)} value={data.Password} itype="text" className="form-control" id="Password"  placeholder="Enter Password"/>
    
   </div>
 

@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './App.css';
 import Login from './Components/Login';
 import Register from './Components/Register';
+import Fileupload from './Components/Fileupload';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
             </div>
   
         </div>
+        <div className="row">
+          <Fileupload/>
+        </div>
+    
       </div>
     </div>
   );
