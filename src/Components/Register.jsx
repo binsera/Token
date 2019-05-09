@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import Inputtext from './Ui/Inputtext';
+import Axios from 'axios';
 
 export default function Register(props) {
 
@@ -14,8 +15,11 @@ const [data,setData]=useState({
 function Submit(e){
     e.preventDefault()
   console.log(data)
+  Axios.post("http://localhost:62405/api/Registers",data)
+   .then(res=>console.log(res.data)).catch(err=>console.error(err))
+  }
 
-}
+
 
 function handle(e){
 
